@@ -7,6 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
 # ds202_lab2
 
 ```{r}
@@ -35,3 +36,13 @@ summary(France$Rating)
 summary(Canada$Rating)
 ```
 3. The three countries with the most ratings are U.S.A., France, and Canada. All three countries have the same median rating, but differ in their mean rating. Canada has the highest mean rating of 3.312, then France has a mean rating of 3.253, and the U.S.A. has a mean rating of 3.162.
+4.What are the 3 most common broad bean origins?
+5.
+```{r}
+bbo <- choco$Broad.Bean.Origin
+sort(table(bbo), decreasing = TRUE)
+```
+Answer:
+  1. Venezuela-217
+  2. Equador-198
+  3. Peru-171

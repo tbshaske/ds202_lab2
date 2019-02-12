@@ -1,0 +1,18 @@
+---
+title: "individual1"
+output: html_document
+name: Taylor Shaske
+github username: tbshaske
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+```
+1.The ratings on the histogram appear to be left-skewed only slightly between 2.5 and 3.Outliers are between 4.5 and 5.
+```{r}
+plot(choco$Cocoa.Pct, choco$Rating)
+cor(choco$Cocoa.Pct, choco$Rating)
+```
+2. Looking at the scatterplot, it does not appear that there is a correlation between Cocoa Percentage and the Rating. There is no linear relationship.
