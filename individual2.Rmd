@@ -1,0 +1,21 @@
+---
+title: "individual2.Rmd"
+output: html_document
+author: Sonya Haan
+---
+
+Question Set (Individual)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+hist(choco$Rating)
+```
+1. The ratings appear slightly left skewed. The most common ratings are between 2.5 and 3.0, and between 3.0 and 3.5. There are approximately 600 chocolates with a rating between 2.5 and 3.0, approximately 800 chocolates witha rating between 3.0 and 3.5. There are no chocolates with a rating between 4.0 and 4.5. Outliers would be chocolates with a rating between 4.5 and 5.0. 
+
+```{r}
+plot(choco$Cocoa.Pct, choco$Rating)
+cor(choco$Cocoa.Pct, choco$Rating)
+```
+2. According to the scatterplot and the correlation coefficient, it does not appear that there is a linear relationship between the rating and the cacao percentage of a chocolate bar.
