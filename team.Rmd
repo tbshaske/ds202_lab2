@@ -8,3 +8,30 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # ds202_lab2
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+str(choco)
+length(choco$Rating)
+```
+1. The overall number of chocolate bars rated is 1852.
+
+```{r}
+year <- factor(choco$Review.Date)
+barplot(table(year))
+```
+2. The number of reports per year tends to increase until 2015. 2016 has fewer reports than expected and in 2017 the number of reports drops drastically. (This drop may indicate when they stopped collecting data.)
+
+```{r}
+sort(table(choco$Company.Location), decreasing = TRUE)
+topThree <- choco[choco$Company.Location %in% c('U.S.A.', 'France', 'Canada'), ]
+boxplot(topThree$Rating ~ topThree$Company.Location)
+
+U.S.A. <- choco[choco$Company.Location == 'U.S.A.', ]
+France <- choco[choco$Company.Location == 'France', ]
+Canada <- choco[choco$Company.Location == 'Canada', ]
+summary(U.S.A.$Rating)
+summary(France$Rating)
+summary(Canada$Rating)
+```
+3. The three countries with the most ratings are U.S.A., France, and Canada. All three countries have the same median rating, but differ in their mean rating. Canada has the highest mean rating of 3.312, then France has a mean rating of 3.253, and the U.S.A. has a mean rating of 3.162.
